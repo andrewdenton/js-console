@@ -1,0 +1,69 @@
+body {
+  color: rgb(19, 16, 16);
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  font-weight: 400;
+  background: #ffc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #777;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 0 0.5625em 0;
+  text-align: center;
+}
+
+button {
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border: none;
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:500;
+  font-size: large;
+  color:#FFFFFF;
+  background-color:#4eb5f1;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+button:hover{
+  background-color:#4095c6;
+}
+
+@media all and (max-width:30em){
+  button {
+  display:block;
+  margin:0.2em auto;
+  }
+}
+
+details {
+  padding-bottom: 1em;  
+}
+
+.button-container {
+  text-align: center;
+}
+
+.sub-details {
+  padding-left: 1.5em;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  top: 1.3rem;
+  left: 2.5rem;
+  font-size: small;
+  font-style: italic;
+  color: #6c5f7c;
+  z-index: 999;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="prism.css" rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
+  <title>Console Debugging On Steroids</title>
+</head>
+<body>
+  <h1>Console Debugging On Steroids</h1>
+  <div class="" id="main-bit">
+    <details>
+      <summary>Let's Table This Motion</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            /* Console.Table demo */
+            async function displayData() {
+              const data = await fetchData('posts');
+              console.table(data);
+            }
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="displayData()">Run The Code!</button>
+      </div>
+    </details>
+
+    <details>
+      <summary>Live Issues</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            /* Live Issues */
+            function liveIssues() {
+              const myCar = { name: "Porsche 928 S4" };
+              console.log(myCar);
+              myCar.name = "Volvo XC40 Inscription Pro";
+            }
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="liveIssues()">Run The Code!</button>
+      </div>
+      <div class="sub-details">
+        <details>
+          <summary>Live Issues - The Fix</summary>
+          <figure>
+            <figcaption>Language: JavaScript</figcaption>
+            <pre>
+              <code class="language-js">
+                function logActualValue(obj) {
+                  console.log(JSON.parse(JSON.stringify(obj)));
+                }
+                
+                function liveIssuesFix() {
+                  const myCar = { name: "Porsche 928 S4" };
+                  logActualValue(myCar);
+                  myCar.name = "Volvo XC40 Inscription Pro"; 
+                  logActualValue(myCar);
+                }
+              </code>
+            </pre>
+          </figure>
+          <div class="button-container">
+            <button onclick="liveIssuesFix()">Run The Code!</button>
+          </div>        
+        </details> 
+      </div>
+    </details>
+    <details>
+      <summary>Group Demo</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            function groupFunction1() {
+              console.group("testFunction1");
+              console.log('This is a call from Function1');
+              console.log('And this is another');
+              console.groupEnd();
+            }
+            
+            function groupFunction2() {
+              console.groupCollapsed("testFunction2");
+              console.log('This is a call from Function2');
+              console.log('And this is another');
+              console.groupEnd();
+            }
+            
+            function groupDemo() {
+              console.group('groupDemo');
+              groupFunction1();
+              groupFunction2();
+              console.groupEnd();
+            }
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="groupDemo()">Run The Code!</button>
+      </div>
+    </details>
+
+    <details>
+      <summary>Time To Debug</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            function aSlowishFunction() {
+              console.time('Time');
+              for (let i=0; i &lt; 10000000000; i++) {
+                if (i % 1000000000 === 0) {
+                  console.timeLog("Time");
+                }
+              };
+            }
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="aSlowishFunction()">Run The Code!</button>
+      </div>
+    </details>
+    <details>
+      <summary>(Re)Tracing Our Steps</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            /* Console.Trace Demo */
+            function subRoutine2() {
+              console.log('I am sub 2');
+              console.trace();
+            }
+            
+            function subRoutine1() {
+              console.log('I am sub 1');
+              subRoutine2();
+            }
+            
+            function reTracingOurSteps() {
+              subRoutine1();
+            }          
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="reTracingOurSteps()">Run The Code!</button>
+      </div>
+    </details>
+  </div>
+</body>
+
+<script src="index.js"></script>
+<script src="prism.js"></script>
+</html>
