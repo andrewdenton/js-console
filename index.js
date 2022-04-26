@@ -58,11 +58,12 @@ function groupDemo() {
 
 function aSlowishFunction() {
   console.time('Time');
-  for (let i=0; i<10000000000; i++) {
-    if (i % 1000000000 === 0) {
+  for (let i=0; i<1000000000; i++) {
+    if (i % 100000000 === 0) {
       console.timeLog('Time');
     }
   };
+  console.timeEnd("Time");
 }
 
 async function displayDataInstrumented() {
