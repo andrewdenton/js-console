@@ -17,10 +17,42 @@
         <figcaption>Language: JavaScript</figcaption>
         <pre>
           <code class="language-js">
-            /* Console.Table demo */
+            /* console.table demo */
+              const carData = [
+              {
+                manufacturer: 'Porsche',
+                model: '928 S4',
+                engineSize: 5.0,
+                configuration: 'V8'
+              },
+              {
+                manufacturer: 'Porsche',
+                model: '911',
+                engineSize: 3.4,
+                configuration: 'Flat 6'
+              },
+              {
+                manufacturer: 'Aston Martin',
+                model: 'DB9',
+                engineSize: 5.9,
+                configuration: 'V12'
+              },
+              {
+                manufacturer: 'Lamborghini',
+                model: 'Diablo',
+                engineSize: 6.0,
+                configuration: 'V12'
+              },
+              {
+                manufacturer: 'Ferrari',
+                model: '355',
+                engineSize: 3.5,
+                configuration: 'V8'
+              }
+            ];
+                    
             async function displayData() {
-              const data = await fetchData('posts');
-              console.table(data);
+              console.table(carData);
             }
           </code>
         </pre>
@@ -155,6 +187,24 @@
       </figure>
       <div class="button-container">
         <button onclick="reTracingOurSteps()">Run The Code!</button>
+      </div>
+    </details>
+    <details>
+      <summary>Being more assertive</summary>
+      <figure>
+        <figcaption>Language: JavaScript</figcaption>
+        <pre>
+          <code class="language-js">
+            /* Console.assert Demo*/
+            function beMoreAssertive() {
+              const car = 911;
+              console.assert(car === 928, "Oh no! You've chosen the wrong Porsche! ;)");
+            }            
+          </code>
+        </pre>
+      </figure>
+      <div class="button-container">
+        <button onclick="beMoreAssertive()">Run The Code!</button>
       </div>
     </details>
   </div>

@@ -1,23 +1,43 @@
-
-const apiEndpoint = 'https://jsonplaceholder.typicode.com/';
-
-async function fetchData(entity) {
-  try {
-    let data = await fetch(`${apiEndpoint}${entity}`);
-    return await data.json();
-  } catch (error) {
-    console.error(error);
+const carData = [
+  {
+    manufacturer: 'Porsche',
+    model: '928 S4',
+    engineSize: 5.0,
+    configuration: 'V8'
+  },
+  {
+    manufacturer: 'Porsche',
+    model: '911',
+    engineSize: 3.4,
+    configuration: 'Flat 6'
+  },
+  {
+    manufacturer: 'Aston Martin',
+    model: 'DB9',
+    engineSize: 5.9,
+    configuration: 'V12'
+  },
+  {
+    manufacturer: 'Lamborghini',
+    model: 'Diablo',
+    engineSize: 6.0,
+    configuration: 'V12'
+  },
+  {
+    manufacturer: 'Ferrari',
+    model: '355',
+    engineSize: 3.5,
+    configuration: 'V8'
   }
-}
+];
 
 
 /* Console.Table demo */
 async function displayData() {
-  const data = await fetchData('posts');
-  console.table(data);
+  console.table(carData);
 }
 
-/* *** Live Issues *** */
+/* Live Issues */
 function liveIssues() {
   const myCar = { name: "Porsche 928 S4" };
   console.log(myCar);
@@ -35,6 +55,7 @@ function liveIssuesFix() {
   logActualValue(myCar);
 }
 
+/* console.group demo */
 function groupFunction1() {
   console.group("testFunction1");
   console.log('This is a call from Function1');
@@ -56,6 +77,7 @@ function groupDemo() {
   console.groupEnd();
 }
 
+/* console.time demo */
 function aSlowishFunction() {
   console.time('Time');
   for (let i=0; i<1000000000; i++) {
@@ -75,7 +97,7 @@ async function displayDataInstrumented() {
 }
 
 
-/* Console.Trace Demo */
+/* console.trace Demo */
 function subRoutine2() {
   console.log('I am sub 2');
   console.trace();
@@ -88,4 +110,10 @@ function subRoutine1() {
 
 function reTracingOurSteps() {
   subRoutine1();
+}
+
+/* Console.assert Demo*/
+function beMoreAssertive() {
+  const car = 911;
+  console.assert(car === 928, "Oh no! You've chosen the wrong Porsche! ;)");
 }
