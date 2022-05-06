@@ -10,3 +10,4 @@ The demo covers :-
 - Timings using `console.time()`.
 - Using `console.trace()` to get an instant call stack without the need for multiple console.logs across functions.
 - Conditional logging using `console.assert()`.
+- How to use CSS in `console.log()` with a slightly ridiculous demo.
