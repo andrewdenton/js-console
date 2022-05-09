@@ -51,8 +51,9 @@
               }
             ];
                     
-            async function displayData() {
-              console.table(carData);
+            function displayData() {
+              console.log(carData); // Old way
+              console.table(carData); // This looks much nicer
             }
           </code>
         </pre>
@@ -219,7 +220,7 @@
               const funkyText = 'background-color:magenta;color:yellow;border:1px solid black';
               const altError = 'background-color:white;color:red;font-weight:bold';
               const comment = 'color:greenlfont-weight:bold;font-size:2rem';
-              const svgDataUrl = `data:image/svg+xml;base64,${btoa(svg)}`
+
               console.clear();
               console.log('%cOMG!',exclamation);
               console.log('%cWhat witchcraft is this?', funkyText);

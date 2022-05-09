@@ -34,6 +34,7 @@ const carData = [
 
 /* Console.Table demo */
 async function displayData() {
+  console.log(carData);
   console.table(carData);
 }
 
@@ -42,6 +43,7 @@ function liveIssues() {
   const myCar = { name: "Porsche 928 S4" };
   console.log(myCar);
   myCar.name = "Volvo XC40 Inscription Pro";
+  console.log(myCar);
 }
 
 function logActualValue(obj) {
@@ -78,14 +80,15 @@ function groupDemo() {
 }
 
 /* console.time demo */
-function aSlowishFunction() {
-  console.time('Time');
-  for (let i=0; i<1000000000; i++) {
-    if (i % 100000000 === 0) {
-      console.timeLog('Time');
-    }
-  };
-  console.timeEnd("Time");
+const apiEndpoint = 'https://jsonplaceholder.typicode.com/';
+
+async function fetchData(entity) {
+  try {
+    let data = await fetch(`${apiEndpoint}${entity}`);
+    return await data.json();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function displayDataInstrumented() {
@@ -96,6 +99,16 @@ async function displayDataInstrumented() {
   console.timeEnd("fetchData");
 }
 
+async function aSlowishFunction() {
+  console.time('Time');
+  for (let i=0; i<1000000000; i++) {
+    if (i % 100000000 === 0) {
+      console.timeLog('Time');
+    }
+  };
+  await displayDataInstrumented();
+  console.timeEnd("Time");
+}
 
 /* console.trace Demo */
 function subRoutine2() {
@@ -126,8 +139,8 @@ function styleMeOut() {
   const altError = 'background-color:white;color:red;font-weight:bold';
   const comment = 'color:greenlfont-weight:bold;font-size:2rem';
   console.clear();
-  console.log('%cOMG!',exclamation);
-  console.log('%cWhat witchcraft is this?', funkyText);
+  console.log('%c OMG!',exclamation);
+  console.log('%c What witchcraft is this?', funkyText);
   console.log('%c Custom styling for errors?', altError);
   console.log('%c Just how far could we take this?',comment);
 };
